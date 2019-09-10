@@ -12,9 +12,9 @@ From: pytorch/pytorch:1.0-cuda10.0-cudnn7-runtime
 # Then we put everything we need to install
 %post
         export PATH=$PATH:/opt/conda/bin
-        apt -y update && \
-        apt install -y keyboard-configuration && \
-        apt install -y \
+        apt-get -y update && \
+        apt-get install -y keyboard-configuration && \
+        apt-get install -y \
         python3-dev \
         python-pyglet \
         python3-opengl \
@@ -67,6 +67,7 @@ From: pytorch/pytorch:1.0-cuda10.0-cudnn7-runtime
         pip install --upgrade minerl
 
         # install the prob_mbrl code
+        conda install qt matplotlib ipython jupyter
         cd /usr/local
         git clone https://github.com/mcgillmrl/prob_mbrl
         cd prob_mbrl
